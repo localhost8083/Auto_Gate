@@ -59,8 +59,12 @@ TCP_SAMPLES = _env_int("TCP_SAMPLES", 3)  # connect attempts, median taken
 TCP_MAX_LATENCY_MS = _env_int("TCP_MAX_LATENCY_MS", 1500)  # drop sluggish hosts
 
 # --- Tier 3: real OpenVPN egress test -----------------------------------
-TIER3_COUNT = _env_int("TIER3_COUNT", 60)        # how many candidates to fully test
-OVPN_CONNECT_TIMEOUT = _env_int("OVPN_CONNECT_TIMEOUT", 30)  # secs to reach "Initialization Sequence Completed"
+TIER3_COUNT = _env_int("TIER3_COUNT", 150)      # how many candidates to fully test
+# Hard wall-clock cap on the Tier 3 phase. Candidates are tested best-first, so
+# if we run out of time we still keep the most promising results. This keeps the
+# hourly job comfortably under its timeout even when many hosts are dead/slow.
+TIER3_TIME_BUDGET_SEC = _env_int("TIER3_TIME_BUDGET_SEC", 1800)  # 30 min
+OVPN_CONNECT_TIMEOUT = _env_int("OVPN_CONNECT_TIMEOUT", 25)  # secs to reach "Initialization Sequence Completed"
 OVPN_CURL_TIMEOUT = _env_int("OVPN_CURL_TIMEOUT", 15)
 THROUGHPUT_BYTES = _env_int("THROUGHPUT_BYTES", 1_000_000)  # ~1 MB sample download
 THROUGHPUT_ENABLED = os.environ.get("THROUGHPUT_ENABLED", "1") != "0"

@@ -253,20 +253,34 @@ def validate_ovpn(candidates: list[TcpResult]) -> dict[str, OvpnResult]:
         return results
 
     baseline_ip = get_baseline_ip()
-    log.info("Tier 3: testing %d candidates (baseline IP=%s)",
-             len(candidates), baseline_ip)
+    budget = config.TIER3_TIME_BUDGET_SEC
+    log.info("Tier 3: testing up to %d candidates (baseline IP=%s, budget=%ss)",
+             len(candidates), baseline_ip, budget)
 
+    started = time.monotonic()
+    tested = 0
     for idx, cand in enumerate(candidates, 1):
+        # Stop cleanly if we've spent the time budget — candidates are already
+        # ordered best-first, so we always test the most promising ones.
+        elapsed = time.monotonic() - started
+        if budget and elapsed >= budget:
+            log.warning("Tier 3 time budget reached (%.0fs); tested %d/%d, "
+                        "skipping the remaining %d candidates",
+                        elapsed, tested, len(candidates), len(candidates) - tested)
+            break
+
         srv = cand.server
         res = _test_one(srv, baseline_ip)
         results[srv.id] = res
+        tested += 1
         status = "OK" if res.egress_verified else f"FAIL({res.error})"
         log.info("[%d/%d] %s %s lat=%sms tput=%skbps",
                  idx, len(candidates), srv.id, status,
                  res.tunnel_latency_ms, res.throughput_kbps)
 
     verified = sum(1 for r in results.values() if r.egress_verified)
-    log.info("Tier 3 done: %d/%d egress-verified", verified, len(results))
+    log.info("Tier 3 done: %d/%d egress-verified in %.0fs",
+             verified, tested, time.monotonic() - started)
     return results
 
 

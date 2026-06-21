@@ -129,8 +129,11 @@ state/history.json reliability state (committed)
 ```
 
 ## Notes & limitations
-- Tier 3 is sequential by design (route safety); ~60 servers fit comfortably in
-  the hourly window. Sharding across runners is possible later for deeper coverage.
+- Tier 3 is sequential by design (route safety) and bounded by a wall-clock
+  budget (`TIER3_TIME_BUDGET_SEC`, default 30 min), testing up to `TIER3_COUNT`
+  (default 150) candidates best-first. If the budget runs out it stops cleanly
+  with the most promising servers already verified. Parallel tunnels (separate
+  tun devices) or sharding across runners can push coverage higher later.
 - Some VPN Gate UDP servers don't answer TCP probes; those are ranked by the
   source-advertised score as a fallback rather than being dropped outright.
 - VPN Gate is a volunteer network — servers come and go; that's exactly why the

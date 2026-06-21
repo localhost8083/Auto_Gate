@@ -9,7 +9,7 @@ on:
       tier3_count:
         description: "How many candidates to fully OpenVPN-test"
         required: false
-        default: "60"
+        default: "150"
 
 # Allow the job to commit results back to the repo.
 permissions:
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 50
     env:
-      TIER3_COUNT: ${{ github.event.inputs.tier3_count || '60' }}
+      TIER3_COUNT: ${{ github.event.inputs.tier3_count || '150' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
