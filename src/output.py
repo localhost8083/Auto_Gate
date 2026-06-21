@@ -46,6 +46,7 @@ def _server_record(
         "tcp_latency_ms": tcp.latency_ms if tcp else None,
         "tunnel_latency_ms": res.tunnel_latency_ms,
         "throughput_kbps": res.throughput_kbps,
+        "sessions": srv.num_sessions,
         "egress_ip": res.egress_ip,
         "egress_verified": res.egress_verified,
         "reliability": reliability,

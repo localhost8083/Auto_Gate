@@ -110,7 +110,7 @@ def _clamp01(x: float) -> float:
 def compute_score(result: OvpnResult, reliability: float) -> float:
     """
     Composite 0..1 ranking score. Only meaningful for egress-verified servers.
-    Weights: reliability 40%, latency 35%, throughput 25%.
+    Weights: reliability 35%, latency 30%, throughput 20%, load (free capacity) 15%.
     """
     if not result.egress_verified:
         return 0.0
@@ -129,5 +129,16 @@ def compute_score(result: OvpnResult, reliability: float) -> float:
     tput = result.throughput_kbps
     tput_score = _clamp01(tput / 10000) if tput else 0.1
 
-    score = 0.40 * reliability + 0.35 * latency_score + 0.25 * tput_score
+    # Load / free capacity: VPN Gate servers cap concurrent sessions and refuse
+    # new connections when full. Fewer current sessions => more likely to accept
+    # a fresh connection, so deprioritise crowded servers. ~64 sessions -> 0.
+    sessions = getattr(result.server, "num_sessions", 0) or 0
+    load_score = _clamp01(1 - (sessions / 64))
+
+    score = (
+        0.35 * reliability
+        + 0.30 * latency_score
+        + 0.20 * tput_score
+        + 0.15 * load_score
+    )
     return round(score, 4)
