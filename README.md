@@ -1,6 +1,6 @@
 # Auto_Gate — VPN Gate server validator
 
-Fetches the public [VPN Gate](https://www.vpngate.net/) server list every hour,
+Fetches the public [VPN Gate](https://www.vpngate.net/) server list every 3 hours,
 **really** validates each candidate (not just "is the port open"), and publishes
 a clean, versioned JSON feed of the **fastest, working** servers — ready to drop
 into an Android (or any) client.
@@ -84,7 +84,7 @@ credentials, and connect — or use the structured `config` fields.
 
 ## Automation
 
-`.github/workflows/validate.yml` runs hourly (cron `0 * * * *`):
+`.github/workflows/validate.yml` runs every 3 hours (cron `0 */3 * * *`):
 installs OpenVPN, runs the pipeline, and commits `data/` + `state/history.json`
 back to the repo **only if something changed**. Trigger manually from the
 Actions tab via *Run workflow* (optionally overriding the Tier 3 count).
@@ -137,7 +137,7 @@ state/history.json reliability state (committed)
 - Some VPN Gate UDP servers don't answer TCP probes; those are ranked by the
   source-advertised score as a fallback rather than being dropped outright.
 - VPN Gate is a volunteer network — servers come and go; that's exactly why the
-  reliability score and hourly re-validation matter.
+  reliability score and periodic re-validation matter.
 
 ## License
 MIT — see [LICENSE](LICENSE). Server configs are public data from VPN Gate.
