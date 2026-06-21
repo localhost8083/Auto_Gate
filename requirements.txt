@@ -1,0 +1,4 @@
+# Runtime dependencies for the VPN Gate validator pipeline.
+# Kept intentionally minimal — most of the pipeline uses the stdlib
+# (asyncio, csv, base64, subprocess, json).
+requests==2.32.3

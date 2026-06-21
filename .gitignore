@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Local runtime artifacts
+*.log
+.tmp/
+tmp/
+*.ovpn
+creds.txt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Do NOT ignore generated data — those are committed by the workflow:
+#   data/**  and  state/history.json  are tracked on purpose.
