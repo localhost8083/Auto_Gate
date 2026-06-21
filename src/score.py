@@ -115,12 +115,19 @@ def compute_score(result: OvpnResult, reliability: float) -> float:
     if not result.egress_verified:
         return 0.0
 
+    # `tunnel_latency_ms` is a full through-tunnel HTTPS request time
+    # (DNS + TCP + TLS + GET), not a raw RTT — for volunteer VPNs it commonly
+    # lands in the hundreds of ms to a couple of seconds, so we calibrate
+    # against a ~3 s ceiling rather than 1 s.
     latency_ms = result.tunnel_latency_ms
-    latency_score = _clamp01(1 - (latency_ms / 1000)) if latency_ms else 0.3
+    latency_score = _clamp01(1 - (latency_ms / 3000)) if latency_ms else 0.0
 
+    # Reward measured throughput up to ~10 Mbps. A failed/absent throughput
+    # sample gets a small penalty value (NOT a neutral midpoint) so that a
+    # server we could actually measure as fast outranks one we couldn't —
+    # the whole point of the feed is "fastest, *proven* working".
     tput = result.throughput_kbps
-    # ~20 Mbps maps to full marks; absent throughput gets a neutral midpoint.
-    tput_score = _clamp01(tput / 20000) if tput else 0.5
+    tput_score = _clamp01(tput / 10000) if tput else 0.1
 
     score = 0.40 * reliability + 0.35 * latency_score + 0.25 * tput_score
     return round(score, 4)
