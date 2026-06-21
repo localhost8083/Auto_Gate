@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-06-21T16:10:40Z",
+  "generated_at": "2026-06-21T16:37:39Z",
   "country_code": "FI",
   "count": 1,
   "servers": [
@@ -12,14 +12,14 @@
       "proto": "tcp",
       "country": "Finland",
       "country_code": "FI",
-      "tcp_latency_ms": 133,
-      "tunnel_latency_ms": 1273,
+      "tcp_latency_ms": 161,
+      "tunnel_latency_ms": 1035,
       "throughput_kbps": null,
       "egress_ip": "195.181.206.197",
       "egress_verified": true,
-      "reliability": 0.6667,
-      "score": 0.3917,
-      "last_validated": "2026-06-21T16:10:40Z",
+      "reliability": 0.75,
+      "score": 0.425,
+      "last_validated": "2026-06-21T16:37:39Z",
       "config": {
         "cipher": "AES-128-CBC",
         "auth": "SHA1",
