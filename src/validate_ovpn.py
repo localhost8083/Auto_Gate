@@ -125,8 +125,8 @@ def _curl_through_tun(iface: str, url: str, timeout: int) -> tuple[str | None, f
         return None, None
 
 
-def _throughput_through_tun(iface: str) -> int | None:
-    """Download a small sample through the tunnel; return kbps or None."""
+def _throughput_once(iface: str) -> int | None:
+    """Single throughput sample through the tunnel; return kbps or None."""
     url = config.THROUGHPUT_URL.format(bytes=config.THROUGHPUT_BYTES)
     cmd = [
         "curl", "--silent", "--show-error", "--interface", iface,
@@ -150,6 +150,20 @@ def _throughput_through_tun(iface: str) -> int | None:
         return int((size * 8 / 1000) / secs)  # kilobits per second
     except Exception:  # noqa: BLE001
         return None
+
+
+def _throughput_through_tun(iface: str) -> int | None:
+    """
+    Measure throughput through the tunnel, retrying once on failure.
+
+    The first sample sometimes fails on a freshly-established tunnel (the
+    server is still settling, or a transient curl error), so a single retry
+    recovers most of those without materially slowing the run.
+    """
+    result = _throughput_once(iface)
+    if result is None:
+        result = _throughput_once(iface)
+    return result
 
 
 def _test_one(server: Server, baseline_ip: str | None) -> OvpnResult:
