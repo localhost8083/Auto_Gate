@@ -3,7 +3,7 @@ name: Validate VPN Gate servers
 on:
   schedule:
     # Every 3 hours, on the hour (UTC).
-    - cron: "0 */3 * * *"
+    - cron: "0 */1 * * *"
   workflow_dispatch:
     inputs:
       tier3_count:
