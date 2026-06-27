@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-06-27T21:21:48Z",
+  "generated_at": "2026-06-27T23:18:59Z",
   "country_code": "UA",
   "count": 1,
   "servers": [
@@ -13,14 +13,14 @@
       "country": "Ukraine",
       "country_code": "UA",
       "tcp_latency_ms": null,
-      "tunnel_latency_ms": 1021,
+      "tunnel_latency_ms": 1658,
       "throughput_kbps": null,
-      "sessions": 1,
+      "sessions": 2,
       "egress_ip": "195.137.244.83",
       "egress_verified": true,
-      "reliability": 0.6667,
-      "score": 0.5989,
-      "last_validated": "2026-06-27T21:21:48Z",
+      "reliability": 0.75,
+      "score": 0.562,
+      "last_validated": "2026-06-27T23:18:59Z",
       "config": {
         "cipher": "AES-128-CBC",
         "auth": "SHA1",
