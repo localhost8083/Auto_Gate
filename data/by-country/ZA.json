@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-02T18:04:24Z",
+  "generated_at": "2026-07-02T19:53:27Z",
   "country_code": "ZA",
   "count": 1,
   "servers": [
@@ -13,14 +13,14 @@
       "country": "South Africa",
       "country_code": "ZA",
       "tcp_latency_ms": null,
-      "tunnel_latency_ms": 874,
-      "throughput_kbps": 4154,
-      "sessions": 30,
+      "tunnel_latency_ms": 1151,
+      "throughput_kbps": 4125,
+      "sessions": 26,
       "egress_ip": "102.23.175.103",
       "egress_verified": true,
-      "reliability": 0.6667,
-      "score": 0.6087,
-      "last_validated": "2026-07-02T18:04:24Z",
+      "reliability": 0.75,
+      "score": 0.619,
+      "last_validated": "2026-07-02T19:53:27Z",
       "config": {
         "cipher": "AES-128-CBC",
         "auth": "SHA1",
