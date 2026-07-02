@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-02T19:53:27Z",
+  "generated_at": "2026-07-02T21:23:46Z",
   "country_code": "TH",
   "count": 1,
   "servers": [
@@ -13,14 +13,14 @@
       "country": "Thailand",
       "country_code": "TH",
       "tcp_latency_ms": null,
-      "tunnel_latency_ms": 1140,
-      "throughput_kbps": 3371,
-      "sessions": 16,
+      "tunnel_latency_ms": 1107,
+      "throughput_kbps": 3421,
+      "sessions": 27,
       "egress_ip": "184.22.25.0",
       "egress_verified": true,
-      "reliability": 0.6667,
-      "score": 0.5993,
-      "last_validated": "2026-07-02T19:53:27Z",
+      "reliability": 0.75,
+      "score": 0.6069,
+      "last_validated": "2026-07-02T21:23:46Z",
       "config": {
         "cipher": "AES-128-CBC",
         "auth": "SHA1",
