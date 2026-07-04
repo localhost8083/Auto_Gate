@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-04T11:47:14Z",
-  "total_verified": 79,
+  "generated_at": "2026-07-04T13:55:27Z",
+  "total_verified": 76,
   "countries": [
-    "AE",
     "JP",
     "KR",
-    "PE",
+    "LA",
+    "PL",
     "RU",
     "TH",
     "US",
