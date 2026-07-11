@@ -1,14 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-11T19:24:29Z",
-  "total_verified": 50,
+  "generated_at": "2026-07-11T21:05:03Z",
+  "total_verified": 45,
   "countries": [
-    "BR",
+    "AR",
     "JP",
     "KR",
-    "MX",
-    "TH"
+    "VN"
   ],
-  "country_count": 5,
+  "country_count": 4,
   "best_count": 20
 }
