@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-12T23:05:42Z",
+  "generated_at": "2026-07-13T00:09:22Z",
   "country_code": "TR",
   "count": 1,
   "servers": [
@@ -13,14 +13,14 @@
       "country": "Turkey",
       "country_code": "TR",
       "tcp_latency_ms": null,
-      "tunnel_latency_ms": 776,
-      "throughput_kbps": 4207,
+      "tunnel_latency_ms": 833,
+      "throughput_kbps": 4614,
       "sessions": 8,
       "egress_ip": "212.108.145.89",
       "egress_verified": true,
-      "reliability": 0.6667,
-      "score": 0.6711,
-      "last_validated": "2026-07-12T23:05:42Z",
+      "reliability": 0.75,
+      "score": 0.7027,
+      "last_validated": "2026-07-13T00:09:22Z",
       "config": {
         "cipher": "AES-128-CBC",
         "auth": "SHA1",
