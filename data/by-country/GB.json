@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-15T22:17:21Z",
+  "generated_at": "2026-07-16T00:13:50Z",
   "country_code": "GB",
   "count": 1,
   "servers": [
@@ -13,14 +13,14 @@
       "country": "United Kingdom",
       "country_code": "GB",
       "tcp_latency_ms": null,
-      "tunnel_latency_ms": 405,
-      "throughput_kbps": 8545,
+      "tunnel_latency_ms": 495,
+      "throughput_kbps": 6109,
       "sessions": 17,
       "egress_ip": "82.39.12.102",
       "egress_verified": true,
-      "reliability": 0.6667,
-      "score": 0.7739,
-      "last_validated": "2026-07-15T22:17:21Z",
+      "reliability": 0.75,
+      "score": 0.7453,
+      "last_validated": "2026-07-16T00:13:50Z",
       "config": {
         "cipher": "AES-128-CBC",
         "auth": "SHA1",
