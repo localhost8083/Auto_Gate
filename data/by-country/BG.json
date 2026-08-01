@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-01T17:15:22Z",
+  "generated_at": "2026-08-01T19:21:31Z",
   "country_code": "BG",
   "count": 1,
   "servers": [
@@ -13,14 +13,14 @@
       "country": "Bulgaria",
       "country_code": "BG",
       "tcp_latency_ms": null,
-      "tunnel_latency_ms": 693,
-      "throughput_kbps": 4453,
-      "sessions": 10,
+      "tunnel_latency_ms": 2419,
+      "throughput_kbps": 1765,
+      "sessions": 19,
       "egress_ip": "89.253.182.9",
       "egress_verified": true,
-      "reliability": 0.6667,
-      "score": 0.6797,
-      "last_validated": "2026-08-01T17:15:22Z",
+      "reliability": 0.75,
+      "score": 0.4614,
+      "last_validated": "2026-08-01T19:21:31Z",
       "config": {
         "cipher": "AES-128-CBC",
         "auth": "SHA1",
