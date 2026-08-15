@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-15T08:46:41Z",
+  "generated_at": "2026-08-15T09:48:29Z",
   "country_code": "IN",
   "count": 1,
   "servers": [
@@ -13,14 +13,14 @@
       "country": "India",
       "country_code": "IN",
       "tcp_latency_ms": null,
-      "tunnel_latency_ms": 930,
-      "throughput_kbps": 3735,
-      "sessions": 9,
+      "tunnel_latency_ms": 955,
+      "throughput_kbps": 3680,
+      "sessions": 18,
       "egress_ip": "49.207.213.67",
       "egress_verified": true,
-      "reliability": 0.6667,
-      "score": 0.644,
-      "last_validated": "2026-08-15T08:46:41Z",
+      "reliability": 0.75,
+      "score": 0.6484,
+      "last_validated": "2026-08-15T09:48:29Z",
       "config": {
         "cipher": "AES-128-CBC",
         "auth": "SHA1",
