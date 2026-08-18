@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-18T04:52:17Z",
-  "total_verified": 69,
+  "generated_at": "2026-08-18T05:43:08Z",
+  "total_verified": 68,
   "countries": [
     "CA",
     "JP",
     "KR",
-    "PT",
-    "RU",
+    "PH",
+    "TH",
     "US",
     "VN"
   ],
