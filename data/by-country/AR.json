@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-20T16:48:18Z",
+  "generated_at": "2026-08-20T17:42:31Z",
   "country_code": "AR",
   "count": 1,
   "servers": [
@@ -13,14 +13,14 @@
       "country": "Argentina",
       "country_code": "AR",
       "tcp_latency_ms": null,
-      "tunnel_latency_ms": 972,
-      "throughput_kbps": 5291,
-      "sessions": 0,
+      "tunnel_latency_ms": 774,
+      "throughput_kbps": 4492,
+      "sessions": 6,
       "egress_ip": "181.117.26.150",
       "egress_verified": true,
-      "reliability": 0.6667,
-      "score": 0.692,
-      "last_validated": "2026-08-20T16:48:18Z",
+      "reliability": 0.75,
+      "score": 0.7109,
+      "last_validated": "2026-08-20T17:42:31Z",
       "config": {
         "cipher": "AES-128-CBC",
         "auth": "SHA1",
