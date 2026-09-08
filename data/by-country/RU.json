@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-08T18:46:04Z",
+  "generated_at": "2026-09-08T21:55:39Z",
   "country_code": "RU",
   "count": 1,
   "servers": [
@@ -13,14 +13,14 @@
       "country": "Russian Federation",
       "country_code": "RU",
       "tcp_latency_ms": null,
-      "tunnel_latency_ms": 792,
-      "throughput_kbps": 3905,
+      "tunnel_latency_ms": 776,
+      "throughput_kbps": 4280,
       "sessions": 0,
       "egress_ip": "95.27.77.72",
       "egress_verified": true,
-      "reliability": 0.6667,
-      "score": 0.6822,
-      "last_validated": "2026-09-08T18:46:04Z",
+      "reliability": 0.75,
+      "score": 0.7205,
+      "last_validated": "2026-09-08T21:55:39Z",
       "config": {
         "cipher": "AES-128-CBC",
         "auth": "SHA1",
