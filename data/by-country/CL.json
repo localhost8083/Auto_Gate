@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-05T18:18:59Z",
+  "generated_at": "2026-10-06T00:54:22Z",
   "country_code": "CL",
   "count": 1,
   "servers": [
@@ -13,14 +13,14 @@
       "country": "Chile",
       "country_code": "CL",
       "tcp_latency_ms": null,
-      "tunnel_latency_ms": 751,
-      "throughput_kbps": 4221,
-      "sessions": 13,
+      "tunnel_latency_ms": 775,
+      "throughput_kbps": 4716,
+      "sessions": 28,
       "egress_ip": "186.189.107.214",
       "egress_verified": true,
-      "reliability": 0.6667,
-      "score": 0.6622,
-      "last_validated": "2026-10-05T18:18:59Z",
+      "reliability": 0.75,
+      "score": 0.6637,
+      "last_validated": "2026-10-06T00:54:22Z",
       "config": {
         "cipher": "AES-128-CBC",
         "auth": "SHA1",
