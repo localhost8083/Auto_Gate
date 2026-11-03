@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-03T16:12:20Z",
-  "total_verified": 59,
+  "generated_at": "2026-11-03T21:51:12Z",
+  "total_verified": 44,
   "countries": [
-    "AE",
     "JP",
     "KR",
+    "NZ",
     "TH",
     "TW",
     "VN"
